@@ -6,6 +6,8 @@ router.post("/api/transaction", ({body}, res) => {
   console.log("here is the post API call")
   Transaction.create(body)
     .then(dbTransaction => {
+      console.log("here is the response")
+      console.log(dbTransaction)
       res.json(dbTransaction);
     })
     .catch(err => {
@@ -18,6 +20,8 @@ router.post("/api/transaction/bulk", ({body}, res) => {
   console.log("bulk api call")
   Transaction.insertMany(body)
     .then(dbTransaction => {
+      console.log("here is the response")
+      console.log(dbTransaction)
       res.json(dbTransaction);
     })
     .catch(err => {
